@@ -9,17 +9,17 @@ const albumSchema = mongoose.Schema({
         type:String
     },
     tracks:[mongoose.Schema.Types.ObjectId],    //track ids
-    tags:[],                                    //tags for fast search
-    uploader:[mongoose.Schema.Types.ObjectId],  //contentCreator account id
+    tags:[String],                                    //tags for fast search
+    uploader:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true
+    },  //contentCreator account id
     credits:[String],    //all artists in the available tracks
     meta:{
         createdAt:{
             type:Date,
             required:true,
-        },
-        lastUpdatedAt:{
-            type:Date
-        },
+        }
     }
 })
 

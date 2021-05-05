@@ -15,11 +15,13 @@ const trackSchema = mongoose.Schema({
     credits:[String],
     tags:[String],
     copyRights:{},         //copyrights data for future integration
-    uploader:[mongoose.Schema.Types.ObjectId], //contentCreator account id
+    uploader:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true
+    }, //contentCreator account id
     meta:{
-        uploadedAt:Date,
+        uploadedAt:String,
         runtime:String, //seconds
-        size:String, //megabytes
     }
 })
 

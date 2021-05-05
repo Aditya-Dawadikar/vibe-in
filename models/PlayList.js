@@ -6,17 +6,17 @@ const playListSchema = mongoose.Schema({
         required:true,
     },
     tracks:[mongoose.Schema.Types.ObjectId],    //track ids
-    tags:[],                                    //tags for fast search
-    creator:[mongoose.Schema.Types.ObjectId],  //user account id
+    tags:[String],                              //tags for fast search
+    creator:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true
+    },  //user account id
     credits:[String],    //all artists in the available tracks
     meta:{
         createdAt:{
             type:Date,
             required:true,
-        },
-        lastUpdatedAt:{
-            type:Date
-        },
+        }
     }
 })
 

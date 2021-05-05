@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true,
     },
-    passWord:{
+    password:{
         type:String,
         required:true
     },
@@ -14,7 +14,7 @@ const userSchema = mongoose.Schema({
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     },
     favourites:[mongoose.Schema.Types.ObjectId],  //liked songs for listening again
-    playlists:[],   //creted playlists
+    playlists:[mongoose.Schema.Types.ObjectId],   //creted playlists
 })
 
 module.exports = mongoose.model('User',userSchema);

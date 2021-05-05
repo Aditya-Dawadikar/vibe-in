@@ -6,11 +6,11 @@ router.get('/all',AlbumController.findAllAlbums);
 
 router.post('/new',AlbumController.createAlbum);
 
-router.post('/add/track/:id/',AlbumController.addTrack);
+router.post('/add/tracks',AlbumController.addTrack);
 
 router.patch('/cover/:id',AlbumController.updateCover);
 
-router.delete('/remove/track/:id',AlbumController.removeTrack);
+router.delete('/remove/track',AlbumController.removeTrack);
 
 router.delete('/delete/:id',AlbumController.deleteAlbum);
 
